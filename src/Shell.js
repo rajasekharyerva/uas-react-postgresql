@@ -5,10 +5,12 @@ import Spinner from './components/Spinner';
 import Toast from './components/Toast';
 import Icon from './components/Icon';
 import StudentSearchBox from './StudentSearchBox';
+import StudentHome from './StudentHome';
 
 export default class Shell extends Component{
 
     selectHandler(index, value, label) {
+        console.log('[Shell](selectHandler)...')
         window.location.hash = "student/" + value;
     }
 
@@ -28,6 +30,7 @@ export default class Shell extends Component{
                     </ul>
                 </header>
                 {this.props.children}
+                <StudentHome />
             </div>
         );
     }

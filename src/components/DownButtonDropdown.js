@@ -15,7 +15,7 @@ export default class DownButtonDropdown extends Component {
         let items = props.data;
         for (let i = 0; i < items.length; i++) {
             let item = items[i];
-            if (item[props.valueField || "id"] === props.value) {
+            if (item[props.valueField || "id"] == props.value) {
                 label = item[props.labelField || "name"];
                 icon = item[props.iconField];
                 break;

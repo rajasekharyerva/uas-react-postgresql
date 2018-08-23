@@ -1,23 +1,26 @@
 import React, {Component} from 'react';
 import moment from 'moment';
+import { connect } from 'react-redux';
+import * as actionTypes from './store/actions';
 
 import * as StudentService from './services/StudentService';
 import RecordHeader from './components/RecordHeader';
 import HeaderField from './components/HeaderField';
 //import {RecordHeader, HeaderField} from './components/PageHeader';
 
-export default class StudentRecord extends Component{
+class StudentRecord extends Component{
 
     state = {
         student:{}
     }
 
     componentDidMount() {
-        this.getStudent(this.props.params.studentId);
+        this.getStudent(this.props.lstudent.id);
     }
 
     componentWillReceiveProps = (props) => {
-        this.getStudent(props.params.studentId);
+        console.log('[StudentRecord](componentWillReceiveProps)...')
+        this.getStudent(this.props.lstudent.id);
     }
 
     getStudent = (id) => {
@@ -37,6 +40,7 @@ export default class StudentRecord extends Component{
     }
 
     render() {
+        console.log('[StudentRecord](render)...')
         return (
             <div>
                 <RecordHeader type="Student" icon="lead"
@@ -50,9 +54,26 @@ export default class StudentRecord extends Component{
                     <HeaderField label="Email" value={this.state.student.email}/>
                 </RecordHeader>
 
-                {React.cloneElement(this.props.children, {student: this.state.student})}
+                {/*{React.cloneElement(this.props.children, {student: this.state.student})}*/}
 
             </div>
         );
     }
 };
+
+const mapStateToProps = state => {
+    console.log('[StudentRecord](mapStateToProps)...')
+    return {
+        lredirect: state.gredirect,
+        lstudent: state.student
+    };
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        linkHandler: (e) => dispatch({type:actionTypes.LINK_HANDLER, gStudent: e})
+    };
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(StudentRecord);

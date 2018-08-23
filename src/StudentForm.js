@@ -95,24 +95,24 @@ export default class StudentForm extends Component {
                                 <label className="slds-form-element__control slds-size--1-of-1">
                                     <small className="slds-form-element__helper">Street</small>
                                     {/*<input className="slds-input" type="text" valueLink={this.linkState('address')}/>*/}
-                                    <input className="slds-input" type="text" />
+                                    <input className="slds-input" type="text" onChange = {this.handleAddressChange} />
                                 </label>
                             </div>
                             <div className="slds-form-element__row">
                                 <label className="slds-form-element__control slds-size--2-of-4">
                                     <small className="slds-form-element__helper">City</small>
                                     {/*<input className="slds-input" type="text" valueLink={this.linkState('city')}/>*/}
-                                    <input className="slds-input" type="text" />
+                                    <input className="slds-input" type="text" onChange = {this.handleCityChange} />
                                 </label>
                                 <label className="slds-form-element__control slds-size--1-of-4">
                                     <small className="slds-form-element__helper">State</small>
                                     {/*<input className="slds-input" type="text" valueLink={this.linkState('state')}/>*/}
-                                    <input className="slds-input" type="text" />
+                                    <input className="slds-input" type="text" onChange = {this.handleStateChange} />
                                 </label>
                                 <label className="slds-form-element__control slds-size--1-of-4">
                                     <small className="slds-form-element__helper">ZIP Code</small>
                                     {/*<input className="slds-input" type="text" valueLink={this.linkState('zip')}/>*/}
-                                    <input className="slds-input" type="text" />
+                                    <input className="slds-input" type="text" onChange = {this.handleZIPChange} />
                                 </label>
                             </div>
                         </div>
@@ -123,28 +123,28 @@ export default class StudentForm extends Component {
                         <label className="slds-form-element__label" htmlFor="sample1">Mobile Phone</label>
                         <div className="slds-form-element__control">
                             {/*<input className="slds-input" type="text" valueLink={this.linkState('mobile_phone')}/>*/}
-                            <input className="slds-input" type="text" />
+                            <input className="slds-input" type="text" onChange = {this.handleMobilePhoneChange} />
                         </div>
                     </div>
                     <div className="slds-form-element">
                         <label className="slds-form-element__label" htmlFor="sample2">Home Phone</label>
                         <div className="slds-form-element__control">
                             {/*<input className="slds-input" type="text" valueLink={this.linkState('phone')}/>*/}
-                            <input className="slds-input" type="text" />
+                            <input className="slds-input" type="text" onChange = {this.handlePhoneChange} />
                         </div>
                     </div>
                     <div className="slds-form-element">
                         <label className="slds-form-element__label" htmlFor="sample1">Email</label>
                         <div className="slds-form-element__control">
                             {/*<input className="slds-input" type="text" valueLink={this.linkState('email')}/>*/}
-                            <input className="slds-input" type="text" />
+                            <input className="slds-input" type="text" onChange = {this.handleEmailChange} />
                         </div>
                     </div>
                     <div className="slds-form-element">
                         <label className="slds-form-element__label" htmlFor="sample1">Date of Birth</label>
                         <div className="slds-form-element__control">
                             {/*<input className="slds-input" type="text" valueLink={this.linkState('dob')}/>*/}
-                            <input className="slds-input" type="text" />
+                            <input className="slds-input" type="text" onChange = {this.handleDOBChange} />
                         </div>
                     </div>
                 </div>
