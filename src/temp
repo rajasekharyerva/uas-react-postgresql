@@ -1,0 +1,35 @@
+{/**/}
+
+StudentForm
+getInitialState() {
+        return this.props.student || {};
+}
+
+SearchBox
+mixins: [
+        require('react-onclickoutside')
+]
+
+Spinner
+getInitialState() {
+        document.addEventListener('startWaiting', () => {
+            this.setState({spinning:true})
+        });
+        document.addEventListener('stopWaiting', () => {
+            this.setState({spinning:false})
+        });
+        return {spinning:false};
+}
+
+Toast
+getInitialState() {
+        document.addEventListener('notify', (event) => {
+            this.setState({showNotification:true, message:event.detail});
+            setTimeout(() => {
+                this.setState({showNotification:false});
+            }, 1700);
+        });
+        return {showNotification:false};
+}
+
+Shell
