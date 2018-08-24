@@ -32,4 +32,4 @@ getInitialState() {
         return {showNotification:false};
 }
 
-Shell
+"proxy": "http://localhost:3001"

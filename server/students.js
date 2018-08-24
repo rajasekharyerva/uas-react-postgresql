@@ -23,7 +23,11 @@ let findById = (req, res, next) => {
     let id = req.params.id;
     let sql = "SELECT * FROM student WHERE id=$1";
     db.query(sql, [parseInt(id)])
-        .then(students =>  res.json(students[0]))
+        .then(students =>  {
+            console.log(students);
+            res.header("Access-Control-Allow-Origin", "*")
+            res.json(students[0])
+        })
         .catch(next);
 };
 

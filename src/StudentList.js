@@ -3,7 +3,8 @@ import DataGrid from './components/DataGrid';
 import StudentView from './StudentView';
 import { Redirect } from 'react-router';
 import { connect } from 'react-redux';
-import * as actionTypes from './store/actions';
+import * as actionCreators from './store/actions';
+
 
 class StudentList extends Component {
 
@@ -57,7 +58,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        linkHandler: (e) => dispatch({type:actionTypes.LINK_HANDLER, gStudent: e})
+        //linkHandler: (e) => dispatch({type:actionTypes.LINK_HANDLER, gStudent: e})
+        linkHandler: (e) => dispatch(actionCreators.linkHandler(e))
     };
 }
 

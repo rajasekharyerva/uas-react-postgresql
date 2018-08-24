@@ -33,8 +33,6 @@ export default class DataGrid extends Component{
     rowClickHandler = (data) => {
         if (this.props.onRowClick) {
             console.log('[DataGrid](rowClickHandler)...')
-            console.log(data)
-            console.log('..............................')
             this.setState({selectedItem: data});
             this.props.onRowClick(data);
         }

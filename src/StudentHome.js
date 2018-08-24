@@ -11,6 +11,7 @@ class StudentHome extends Component {
     }
 
     componentDidMount() {
+        console.log('[StudentHome](componentDidMount)...')
         StudentService.findAll().then(students => this.setState({students}));
     }
 
@@ -28,6 +29,7 @@ class StudentHome extends Component {
     }
 
     render(){
+        console.log('[StudentHome](render)...')
         return(
             <div>
                 <HomeHeader type="Students"
