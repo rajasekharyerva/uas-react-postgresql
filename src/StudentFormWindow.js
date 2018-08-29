@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import StudentForm from './StudentForm';
+import { connect } from 'react-redux';
+import * as actionCreators from './store/actions';
 
-export default class StudentFormWindow extends Component{
+class StudentFormWindow extends Component{
 
     saveHandler = () => {
-        this.refs.form.save();
+        this.refs.form.getWrappedInstance().save();
     }
 
     render() {
@@ -36,3 +38,24 @@ export default class StudentFormWindow extends Component{
         );
     }
 };
+
+
+const mapStateToProps = state => {
+    console.log('[StudentForm](mapStateToProps)...')
+    return {
+        lredirect: state.dredirect,
+        lstudent: state.student,
+        lEditRedirect: state.eredirect
+    };
+}
+
+const mapDispatchToProps = dispatch => {
+    console.log('[StudentFormWindow](mapDispatchToProps)...')
+    return {
+        deleteHandler: (e) => dispatch(actionCreators.deleteStudent(e)),
+        editHandler: (e) => dispatch(actionCreators.editStudent(e))
+    };
+}
+
+
+export default connect(mapStateToProps, null, null, { withRef: true })(StudentFormWindow);

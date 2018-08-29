@@ -64,7 +64,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        linkHandler: (student) => dispatch({ type: actionTypes.ADD_STUDENT, dstudent: student })
+        linkHandler: (student) => dispatch({ type: actionTypes.DELETE_STUDENT, dstudent: student })
     };
 }
 

@@ -16,8 +16,8 @@ class App extends Component {
           {/*<Route path=":studentId" component={StudentView} />*/}
           <Route exact path="/student/:id" component={StudentView} />
           {/*<Route exact path="/student/1" render={StudentView} />*/}
-          <Route exact path=":studentId/edit" component={StudentFormWrapper} />
-          <Route exact path="*" component={Shell} />
+          <Route exact path="/student/:id/edit" component={StudentFormWrapper} />
+          <Route exact path="/" component={Shell} />
         </Switch>
       </div>
 

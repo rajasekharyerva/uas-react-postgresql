@@ -38,7 +38,7 @@ class StudentList extends Component {
                 <DataGrid data={this.props.students}>
                     {/*<div header="First Name" field="first_name" onLink={(e) =>this.linkHandler(e)} />*/}
                     <div header="First Name" field="first_name" onLink={(e) => this.props.linkHandler(e)} />
-                    <div header="Last Name" field="last_name" onLink={() =>this.linkHandler()} />
+                    <div header="Last Name" field="last_name" />
                     <div header="Address" field="address" />
                     <div header="City" field="city" />
                     <div header="State" field="state" />
